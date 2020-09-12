@@ -9,6 +9,8 @@ Arthur Barbero - RA 1460481821009
   
   ```
     git clone https://github.com/arthurbarbero/arthurbarbero.git
+    
+    cd arthurbarbero
 
     git fetch & git checkout primeira-entrega
   ```
