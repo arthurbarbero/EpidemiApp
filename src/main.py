@@ -3,7 +3,7 @@ from flask import Flask
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
+def primeira_entrega():
     return '''
     <h1>
         <p>EpidemiApp - Sistema de Coleta e Visualização de Dados Epidemiológicos</p>
