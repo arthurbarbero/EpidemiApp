@@ -9,8 +9,8 @@ function sendDisease() {
     var doencaDescription = document.getElementById('doenca-description');
 
     if (!doencaName.value || !doencaDescription.value) {
-        !doencaName.value ? email.style.border = '2px solid red' : null;
-        !doencaDescription.value ? password.style.border = '2px solid red' : null;
+        !doencaName.value ? doencaName.style.border = '2px solid red' : null;
+        !doencaDescription.value ? doencaDescription.style.border = '2px solid red' : null;
         return null;
     }  
 

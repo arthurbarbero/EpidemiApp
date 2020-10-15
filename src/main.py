@@ -22,11 +22,16 @@ try:
     template_dir = os.path.join(template_dir, 'view')
     
     app = Flask(__name__, template_folder=template_dir, static_folder=template_dir)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://application:123456@127.0.0.1:3306/epidemiapp'
+    
+    _USERNAME = os.getenv('MARIA_USERNAME')
+    _PASSWORD = os.getenv('MARIA_PASSWORD')
+    _DATABASE = os.getenv('MARIA_DATABASE')
+    _HOST = os.getenv('MARIA_HOST')
+    _PORT = os.getenv('MARIA_PORT')
+
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{_USERNAME}:{_PASSWORD}@{_HOST}:{_PORT}/{_DATABASE}'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
     
-    app.secret_key = b'teste'
-
     user_db.init_app(app)
     disease_db.init_app(app)
 
@@ -36,6 +41,7 @@ try:
     app.register_blueprint(accountBp)
     app.register_blueprint(dashBp)
     app.register_blueprint(diseaseBp)
+    app.config['TESTING'] = True
 
 except Exception as error:
     print(f'Erro: {error}')
