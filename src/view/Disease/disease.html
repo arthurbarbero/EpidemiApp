@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Home/home.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Disease/disease.css') }}">
+    <script src="{{ url_for('static', filename='utils/form_utils.js') }}"></script>
+    <script src="{{ url_for('static', filename='Disease/disease.js') }}"></script>
+    <title>{{ title }}</title>
+</head>
+<body>
+    {% include 'Header/header.html' %}
+    <div class="home-background">
+        <h1 class="title">
+            Cadastrar Doênça
+        </h1>
+        <div class="first-container">
+            <div class="card">
+                <div class="disease-form">
+                    <div class='form-div-input'>
+                        <label for="doenca-name">Nome da Doênça:</label>
+                        <div class="forms">
+                            <input
+                                class="form-input"
+                                type="text"
+                                name="doenca-name"
+                                id="doenca-name"
+                                onblur="onFocusLoose(this)"
+                            >    
+                        </div>
+                    </div>
+                </div>
+                <div class="disease-form">
+                    <div class='form-div-input'>
+                        <label for="doenca-description">Sintomas da Doênça:</label>
+                        <div class="forms">
+                            <textarea 
+                                class="form-input"
+                                id="doenca-description"
+                                name="doenca-description"
+                                rows="6"
+                                cols="50"
+                                onblur="onFocusLoose(this)"
+                            ></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="disease-form">
+                    <div class='form-div-input'>
+                        <div class="forms">
+                            <input
+                                class="form-btn"
+                                value="Cadastrar"
+                                type="button"
+                                name="logar"
+                                id="logar"
+                                onclick="sendDisease()"
+                            >    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+    {% include 'Footer/footer.html' %}
+</body>
+</html>
