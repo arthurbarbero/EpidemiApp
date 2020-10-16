@@ -9,15 +9,16 @@ from src.controller.teste import bp
 from src.controller.account.accountController import accountBp
 from src.controller.dashboard.dashBoardController import dashBp
 from src.controller.disease.diseaseController import diseaseBp
+from src.controller.incidence.incidenceController import incidenceBp
 
 from src.model.userModel import db as user_db
 from src.model.diseaseModel import db as disease_db
+from src.model.incidenceModel import db as incidence_db
 
 load_dotenv(find_dotenv())
 
 try:
-    template_dir = os.path.dirname(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
-    template_dir = os.path.join(template_dir, 'repo')
+    template_dir = os.path.abspath(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
     template_dir = os.path.join(template_dir, 'src')
     template_dir = os.path.join(template_dir, 'view')
     
@@ -34,6 +35,7 @@ try:
     
     user_db.init_app(app)
     disease_db.init_app(app)
+    incidence_db.init_app(app)
 
     app.wsgi_app = ProxyFix(app.wsgi_app)
     
@@ -41,6 +43,7 @@ try:
     app.register_blueprint(accountBp)
     app.register_blueprint(dashBp)
     app.register_blueprint(diseaseBp)
+    app.register_blueprint(incidenceBp)
     app.config['TESTING'] = True
 
 except Exception as error:

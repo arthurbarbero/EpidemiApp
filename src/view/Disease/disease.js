@@ -15,8 +15,8 @@ function sendDisease() {
     }  
 
     let obj = { 
-        diseaseName: doencaName.value,
-        diseaseDescription: doencaDescription.value,
+        name: doencaName.value,
+        symptoms: doencaDescription.value,
     }
 
     var ajax = new XMLHttpRequest();
