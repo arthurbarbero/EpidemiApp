@@ -16,7 +16,7 @@ label {
     justify-content: center;
     align-items: center;
     width: clamp(300px, 75%, 100%);
-    padding: 15px 0 15px 0;
+    padding: 15px 5px 15px 5px;
     background-color: beige;
     border-radius: 10px;
     margin: 5px;
@@ -58,4 +58,27 @@ label {
     border-radius: 10px;
     box-shadow: 0px 2px 3px black;
     padding: 10px;
+}
+
+/* table */
+
+.table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: antiquewhite;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+}
+.t-head {
+    border: 1px solid black;
+    background-color: #dddddd;
+}
+
+.table-data {
+    border: 1px solid black;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
 }

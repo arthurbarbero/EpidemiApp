@@ -23,6 +23,11 @@
                         <div class="forms">
                             <select class="select-doenca" name="doencas" id="doencas">
                                 <option value="" disabled selected>Clique para selecionar a doênça</option>
+                                {% if data.diseases %}
+                                    {% for disease in data.diseases %}
+                                        <option value="{{ disease }}">{{ disease }}</option>
+                                    {% endfor %}
+                                {% endif %}
                             </select>
                         </div>
                     </div>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Home/home.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Incidence/incidenceView.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Incidence/incidence.css') }}">
+    <script src="{{ url_for('static', filename='utils/form_utils.js') }}"></script>
+    <script src="{{ url_for('static', filename='Incidence/incidenceView.js') }}"></script>
+    <title>{{ title }}</title>
+</head>
+<body>
+    {% include 'Header/header.html' %}
+    <div class="home-background">
+        {% if not data.graphs %}
+            <h3 class="title">
+                Não há registros epidemiológicos para a Doênça selecionada.
+            </h3>
+            <div class="card">
+                <label for="doencas">Selecione a Doênça:</label>
+                <div class="card-item">
+                    <select class="select-doenca" name="doencas" id="doencas">
+                        <option value="" disabled selected>Clique para selecionar a doênça</option>
+                        {% if data.diseases %}
+                            {% for disease in data.diseases %}
+                                <option value="{{ disease }}">{{ disease }}</option>
+                            {% endfor %}
+                        {% endif %}
+                    </select>
+                    <input class="form-btn" type="button" value="Enviar" onclick="viewIncidences()">
+                </div>
+            </div>
+        {% else %}
+            <h1 class="title">
+                Incidência Epidemiológica
+            </h1>
+            <div class="card">
+                <label for="doencas">Selecione a Doênça:</label>
+                <div class="card-item">
+                    <select class="select-doenca" name="doencas" id="doencas">
+                        <option value="" disabled selected>Clique para selecionar a doênça</option>
+                        {% if data.diseases %}
+                            {% for disease in data.diseases %}
+                                <option value="{{ disease }}">{{ disease }}</option>
+                            {% endfor %}
+                        {% endif %}
+                    </select>
+                    <input class="form-btn" type="button" value="Enviar" onclick="viewIncidences()">
+                </div>
+                <div class="graph">
+                    <div class="graph-header">
+                        <h3>
+                            {{ data.graphs[0][0].disease }}
+                        </h3>
+                    </div>
+                    <div class="graph-body">
+                        <ul id="graph_chart" class="graph-chart">
+                            {% for graph in data.graphs %}
+                                <div class="graph-bar">
+                                    <li style="border: 1px solid green; background-color: green; height: {{ graph|length }}px;">&nbsp;&nbsp;</li>
+                                    <span>{{ graph|length }}</span>
+                                </div>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="graph-footer">
+                        <ul class="graph-ul">
+                            {% for graph in data.graphs %}
+                                <li>{{ graph[0].incidenceDate|dateformat }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+    {% include 'Footer/footer.html' %}
+</body>
+</html>

@@ -2,8 +2,14 @@ from flask import Blueprint, current_app, render_template, request, Response, se
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import SQLAlchemyError
 
+from src.controller.disease.diseaseController import getAllDisease
+from src.controller.incidence.incidenceController import getAllIncidencesByDisease
+
 dashBp = Blueprint('dash', __name__, url_prefix='/dash')
 
-@dashBp.route('/')
+@dashBp.route('/', methods=["GET"])
 def dashIndex():
-    return render_template('DashBoard/dashboard.html', title='Doênças', data={"logado": True})
+    diseases = getAllDisease().json
+    diseasesTable = getAllIncidencesByDisease()
+
+    return render_template('DashBoard/dashboard.html', title='Doênças', data={"logado": True, "diseases": diseases, "diseasesTable": diseasesTable})

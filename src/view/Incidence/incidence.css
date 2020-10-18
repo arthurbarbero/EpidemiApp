@@ -55,7 +55,6 @@ label {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: 50%;
 }
 
 .form-btn {

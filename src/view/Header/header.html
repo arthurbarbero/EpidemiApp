@@ -12,7 +12,10 @@
             EpidemiApp - Sistema de Coleta e Visualização de Dados Epidemiológicos
         </div>
         {% if data and data.logado %}
-            <input class="logout-btn" type="button" value="Logout" onclick="logout()" />
+            <div class="btns">
+                <input class="logout-btn" type="button" value="DashBoard" onclick="dash()" />
+                <input class="logout-btn" type="button" value="Logout" onclick="logout()" />
+            </div>
         {% else %}
             <input class="login-btn" type="button" value="Login" onclick="window.location.href='/account/login'"/>
         {% endif %}

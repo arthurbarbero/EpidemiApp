@@ -1,0 +1,59 @@
+ul {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+li {
+    text-decoration: none;
+}
+
+.graph {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.graph-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.graph-chart {
+    min-height: 200px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    border: 1px solid black;
+}
+
+.graph-bar {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    height: 100%;
+}
+
+.graph-footer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.graph-ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}

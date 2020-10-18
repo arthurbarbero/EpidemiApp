@@ -28,15 +28,39 @@
                 <div class="card-item">
                     <select class="select-doenca" name="doencas" id="doencas">
                         <option value="" disabled selected>Clique para selecionar a doênça</option>
+                        {% if data.diseases %}
+                            {% for disease in data.diseases %}
+                                <option value="{{ disease }}">{{ disease }}</option>
+                            {% endfor %}
+                        {% endif %}
                     </select>
-                    <input class="form-btn" type="button" value="Enviar">
+                    <input class="form-btn" type="button" value="Enviar" onclick="viewIncidences()">
                 </div>
             </div>
             <div class="card">
                 <h4 class="subtitle">Visualização dos dados de doença</h4>
-                <p>
-                    2ª Opção
-                </p> 
+                <table class="table">
+                    <thead class="t-head">
+                        <td class="table-data"><strong>Doênça</strong></td>
+                        <td class="table-data"><strong>Incidência total</strong></td>
+                        <td class="table-data"><strong>Último registro</strong></td>
+                    </thead>
+                    <tbody>
+                        {% for item in data.diseasesTable %}
+                            <tr>
+                                <td class="table-data">
+                                    {{ item.name }}
+                                </td>
+                                <td class="table-data">
+                                    {{ item.incidences }}
+                                </td>
+                                <td class="table-data">
+                                    {{ item.lastIncidence | dateformat }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

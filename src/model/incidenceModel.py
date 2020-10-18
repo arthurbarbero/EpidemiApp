@@ -6,7 +6,7 @@ db = SQLAlchemy()
 
 class Incidence(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    fk_doenca = db.Column(db.Integer, nullable=False)
+    fk_disease = db.Column(db.Integer, nullable=False)
     fk_user = db.Column(db.Integer, nullable=False)
     incidenceDate = db.Column(db.DateTime(), nullable=False)
     created_at = db.Column(db.DateTime(), default=strftime("%Y-%m-%d"))
