@@ -1,7 +1,9 @@
 Arthur Barbero - RA 1460481821009
 
-## Primeira entrega
------
+### Requerimentos do projeto
+
+- Python versão 3.6 ou maior - [Python Download](https://www.python.org/downloads/release/python-386/);
+- [MariaDB](https://mariadb.com/downloads/)
 
 ### Como iniciar o projeto
 
@@ -10,26 +12,34 @@ Arthur Barbero - RA 1460481821009
   ```
     git clone https://github.com/arthurbarbero/arthurbarbero.git
 
-    git fetch & git checkout primeira-entrega
+    git pull
   ```
 
 - Criando e acessando o Virtual Enviroment:
   ```
     python -m venv env
 
-    cd env/Scripts
-    
-    activate
+    env\Scripts\activate
   ``` 
 
-- Volte para a raiz da pasta e instale as dependências:
+- Instalando as dependências:
   ``` 
     pip install -r requirements.txt
   ```
 
-- Após instalar as dependências, inicie a aplicação Flask:
+- Criando o arquivo ``.env``
+    Dentro da raiz do repositório existe um exemplo do arquivo ``.env`` chamado ``.env-example``, este deve ser seguido para a conecção com seu banco de dados local, segue exemplo 
   ```
-    python src/main.py
+    MARIA_DATABASE=epidemiapp
+    MARIA_HOST=127.0.0.1
+    MARIA_PORT=3306
+    MARIA_USERNAME=application
+    MARIA_PASSWORD=123456
+  ```
+
+- Após instalar as dependências e criar o arquivo ``.env``, inicie a aplicação Flask:
+  ```
+    python wsgi.py
   ```
 
 - Assim que a seguinte mensagem aparecer, acesse o link informado para acessar a aplicação:
