@@ -5,7 +5,6 @@ from flask_sqlalchemy import SQLAlchemy
 from dotenv import load_dotenv, find_dotenv
 from werkzeug.middleware.proxy_fix import ProxyFix
 
-from src.controller.teste import bp
 from src.controller.account.accountController import accountBp
 from src.controller.dashboard.dashBoardController import dashBp
 from src.controller.disease.diseaseController import diseaseBp
@@ -39,15 +38,29 @@ try:
 
     app.wsgi_app = ProxyFix(app.wsgi_app)
     
-    app.register_blueprint(bp)
     app.register_blueprint(accountBp)
     app.register_blueprint(dashBp)
     app.register_blueprint(diseaseBp)
     app.register_blueprint(incidenceBp)
-    app.config['TESTING'] = True
 
 except Exception as error:
     print(f'Erro: {error}')
+
+
+def init_database(appFlask):
+    db = SQLAlchemy(appFlask)
+    engine = db.create_engine(f'mysql+pymysql://{_USERNAME}:{_PASSWORD}@{_HOST}:{_PORT}', {})
+    try:
+        engine.execute(f"CREATE DATABASE {_DATABASE}") 
+    except Exception as error:
+        print(error)
+        pass
+    
+    with appFlask.app_context():
+        user_db.create_all()
+        disease_db.create_all()
+        incidence_db.create_all()
+
 
 @app.route('/')
 def index():
