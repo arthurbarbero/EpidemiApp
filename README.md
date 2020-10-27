@@ -17,7 +17,7 @@ Arthur Barbero - RA 1460481821009
     git pull
   ```
 
-- Criando e acessando o Virtual Enviroment:
+- Criando e acessando o Virtual Environment:
   ```
     python -m venv env
 
