@@ -32,6 +32,7 @@ Arthur Barbero - RA 1460481821009
   ```
 
 - Criando o arquivo ``.env``
+
     Dentro da raiz do repositório existe um exemplo do arquivo ``.env`` chamado ``.env-example``, este deve ser seguido para a conecção com seu banco de dados local, segue exemplo 
   ```
     MARIA_DATABASE=epidemiapp
@@ -40,8 +41,15 @@ Arthur Barbero - RA 1460481821009
     MARIA_USERNAME=application
     MARIA_PASSWORD=123456
   ```
+    
+    **Utilize usuário e senha com previlégios de administrador**
+    
+- Caso seja a primeira vez que irá rodar o projeto, inicialize o projeto com o seguinte comando:
+  ```
+    python wsgi.py init_db
+  ```
 
-- Após instalar as dependências e criar o arquivo ``.env``, inicie a aplicação Flask:
+- Para iniciar a aplicação Flask:
   ```
     python wsgi.py
   ```
