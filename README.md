@@ -1,3 +1,5 @@
+## Video: https://youtu.be/RJRNqgDnc2g
+
 Arthur Barbero - RA 1460481821009
 
 ### Requerimentos do projeto
