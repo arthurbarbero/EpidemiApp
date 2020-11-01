@@ -9,7 +9,15 @@ dashBp = Blueprint('dash', __name__, url_prefix='/dash')
 
 @dashBp.route('/', methods=["GET"])
 def dashIndex():
-    diseases = getAllDisease().json
-    diseasesTable = getAllIncidencesByDisease()
+    try:
+        diseases = getAllDisease().json
+        diseasesTable = getAllIncidencesByDisease()
+    except Exception as error:
+        print(error)
+        diseases = []
+        diseasesTable = []
+
+       
+    
 
     return render_template('DashBoard/dashboard.html', title='Doênças', data={"logado": True, "diseases": diseases, "diseasesTable": diseasesTable})

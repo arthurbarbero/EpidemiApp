@@ -15,14 +15,22 @@ incidenceBp = Blueprint('incidence', __name__, url_prefix='/incidence')
 
 @incidenceBp.route('/')
 def incidenceIndex():
-    diseases = getAllDisease().json
+    try:
+        diseases = getAllDisease().json
+    except Exception as error:
+        print(error)
+        diseases = []
 
     return render_template('Incidence/incidence.html', title='Cadastrar incidência epidemiológica', data={"logado": True, "diseases": diseases})
 
 @incidenceBp.route('/view/<disease>', methods=["GET"])
 def incidenceView(disease):
-    graphData = _getIncidenceByDisease(disease)
-    diseases = getAllDisease().json
+    try:
+        graphData = _getIncidenceByDisease(disease)
+        diseases = getAllDisease().json
+    except Exception as error:
+        print(error)
+        diseases = []
 
     return render_template('Incidence/incidenceView.html', title='Cadastrar incidência epidemiológica', data={"logado": True, "diseases": diseases, "graphs": graphData})
 

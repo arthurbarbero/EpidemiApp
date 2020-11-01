@@ -43,6 +43,8 @@ def getAllDisease():
         db = SQLAlchemy(current_app)
 
         allDisease = DiseaseModel.query.all()
+        if not allDisease:
+            raise "Sem doênças"
 
         allDisease = list(map(lambda x: x.name, allDisease))
 
@@ -51,8 +53,10 @@ def getAllDisease():
 
     except SQLAlchemyError as error:
         res = json.dumps({"Erro": str(error.__dict__['orig'])})
-        return Response(res, mimetype='application/json', status=500)
+        print(res)
+        raise None
     
     except Exception as error:
         res = json.dumps({"Erro": str(error)})
-        return Response(res, mimetype='application/json', status=500)
+        print(res)
+        raise None
