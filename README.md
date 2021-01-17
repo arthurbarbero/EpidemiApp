@@ -25,7 +25,7 @@ Com todos os acontecimentos decorrentes da pandemia, o mundo conseguiu ver a imp
 
 Ao iniciar a aplicação Web, o usuário deverá se cadastrar ou se logar para iniciar o acesso a plataforma.
 
-<img src="https://raw.githubusercontent.com/arthurbarbero/EpidemiApp/master/imagens/home.jpg" width="400">
+<img src="https://raw.githubusercontent.com/arthurbarbero/EpidemiApp/master/imagens/Home1.jpg" width="400">
 
 ### Login / Cadastre-se :pencil:
 
