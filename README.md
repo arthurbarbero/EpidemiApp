@@ -25,36 +25,36 @@ Com todos os acontecimentos decorrentes da pandemia, o mundo conseguiu ver a imp
 
 Ao iniciar a aplicação Web, o usuário deverá se cadastrar ou se logar para iniciar o acesso a plataforma.
 
-<img src="https://raw.githubusercontent.com/arthurbarbero/EpidemiApp/master/imagens/Home1.jpg" width="400">
+<img src="https://raw.githubusercontent.com/arthurbarbero/EpidemiApp/master/imagens/Home1.jpg" width="800">
 
 ### Login / Cadastre-se :pencil:
 
 - Login:
-<img src="https://raw.githubusercontent.com/arthurbarbero/EpidemiApp/master/imagens/Login.jpg" width="400">
+<img src="https://raw.githubusercontent.com/arthurbarbero/EpidemiApp/master/imagens/Login.jpg" width="800">
 
 - Cadastre-se:
-<img src="https://raw.githubusercontent.com/arthurbarbero/EpidemiApp/master/imagens/Cadastro.jpg" width="400">
+<img src="https://raw.githubusercontent.com/arthurbarbero/EpidemiApp/master/imagens/Cadastro.jpg" width="800">
 
 ### DashBoard :chart_with_upwards_trend:
 
 Após o Login, o usuário já pode ter uma análise de doênças cadastradas e a quantidade de suas incidências.
 
-<img src="https://raw.githubusercontent.com/arthurbarbero/EpidemiApp/master/imagens/Dash.jpg" width="400">
+<img src="https://raw.githubusercontent.com/arthurbarbero/EpidemiApp/master/imagens/Dash.jpg" width="800">
 
 ### Cadastrar Doênça :pencil2:
 
 O usuário poderá cadastrar a doênça para que todos possam informar quando houve incidência dessa doênça, ou nova doênça.
-<img src="https://raw.githubusercontent.com/arthurbarbero/EpidemiApp/master/imagens/Cadastrar_doen%C3%A7a.jpg" width="400">
+<img src="https://raw.githubusercontent.com/arthurbarbero/EpidemiApp/master/imagens/Cadastrar_doen%C3%A7a.jpg" width="800">
 
 ### Cadastrar Incidência da doênça :pill:
 
 Utilizando das informações cadastradas de Doênça, o usuário informa quando houve mais uma incidência da doença selecionada.
-<img src="https://raw.githubusercontent.com/arthurbarbero/EpidemiApp/master/imagens/Cadastrar_doen%C3%A7a.jpg" width="400">
+<img src="https://raw.githubusercontent.com/arthurbarbero/EpidemiApp/master/imagens/Cadastrar_doen%C3%A7a.jpg" width="800">
 
 ### Gráfico de incidência :bar_chart:
 
 Após todas informações cadastradas, o usuário pode visualizar graficamente para acompanhar o crescimento ou queda das incidências da doênça selecionada.
-<img src="https://raw.githubusercontent.com/arthurbarbero/EpidemiApp/master/imagens/Incidencia.jpg" width="400">
+<img src="https://raw.githubusercontent.com/arthurbarbero/EpidemiApp/master/imagens/Incidencia.jpg" width="800">
 
 
 ### Requerimentos do projeto
