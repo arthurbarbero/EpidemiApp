@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Home/home.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='DashBoard/dashboard.css') }}">
+    <script src="{{ url_for('static', filename='DashBoard/dashboard.js') }}"></script>
+    <title>{{ title }}</title>
+</head>
+<body>
+    {% include 'Header/header.html' %}
+    <div class="home-background">
+        <h1 class="title">
+            - DashBoard -
+        </h1>
+        <div class="first-container">
+            <div class="card">
+                <h4 class="subtitle">Cadastre uma nova doênça ou incidência</h4>
+                <div class="card-item">
+                    <input class="form-btn" type="button" value="Doênça" onclick="window.location.href='/disease/'">
+                    <input class="form-btn" type="button" value="Incidência" onclick="window.location.href='/incidence/'">
+                </div>
+            </div>
+            <div class="card">
+                <h4 class="subtitle">Visualização dos dados epidemiológicos</h4>
+                <label for="doencas">Selecione a Doênça:</label>
+                <div class="card-item">
+                    <select class="select-doenca" name="doencas" id="doencas">
+                        <option value="" disabled selected>Clique para selecionar a doênça</option>
+                        {% if data.diseases %}
+                            {% for disease in data.diseases %}
+                                <option value="{{ disease }}">{{ disease }}</option>
+                            {% endfor %}
+                        {% endif %}
+                    </select>
+                    <input class="form-btn" type="button" value="Enviar" onclick="viewIncidences()">
+                </div>
+            </div>
+            <div class="card">
+                <h4 class="subtitle">Visualização dos dados de doença</h4>
+                <table class="table">
+                    <thead class="t-head">
+                        <td class="table-data"><strong>Doênça</strong></td>
+                        <td class="table-data"><strong>Incidência total</strong></td>
+                        <td class="table-data"><strong>Último registro</strong></td>
+                    </thead>
+                    <tbody>
+                        {% for item in data.diseasesTable %}
+                            <tr>
+                                <td class="table-data">
+                                    {{ item.name }}
+                                </td>
+                                <td class="table-data">
+                                    {{ item.incidences }}
+                                </td>
+                                <td class="table-data">
+                                    {{ item.lastIncidence | dateformat }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    {% include 'Footer/footer.html' %}
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Home/home.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Register/register.css') }}">
+    <script src="{{ url_for('static', filename='utils/form_utils.js') }}"></script>
+    <script src="{{ url_for('static', filename='Register/register.js') }}"></script>
+</head>
+<body>
+    {% include 'Header/header.html' %}
+    <div class="home-background">
+        <div class="register-containers">
+            <div class="register-card">
+                <div class="register-title">
+                    <h2> Cadastre-se </h2>
+                </div>
+                <div class="register-form">
+                    <div class='form-div-input'>
+                        <label for="name">Nome Completo:</label>
+                        <div class="forms">
+                            <input
+                                class="form-input"
+                                type="text"
+                                name="name"
+                                id="name"
+                                onblur="onFocusLoose(this)"
+                            >    
+                        </div>
+                    </div>
+                </div>
+                <div class="register-form">
+                    <div class='form-div-input'>
+                        <label for="email">E-mail:</label>
+                        <div class="forms">
+                            <input
+                                class="form-input"
+                                type="e-mail"
+                                name="email"
+                                id="email"
+                                onblur="onFocusLoose(this)"
+                            >    
+                        </div>
+                    </div>
+                </div>
+                <div class="register-form">
+                    <div class='form-div-input'>
+                        <label for="password">Senha:</label>
+                        <div class="forms">
+                            <input 
+                                class="form-input"
+                                type="password"
+                                name="password"
+                                id="password" 
+                                onblur="onFocusLoose(this)" 
+                            >    
+                        </div>
+                    </div>
+                </div>
+                <div class="register-form">
+                    <div class='form-div-input'>
+                        <div class="forms">
+                            <input
+                                class="form-btn"
+                                value="Cadastrar"
+                                type="button"
+                                name="logar"
+                                id="logar"
+                                onclick="sendRegister()"
+                            >    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'Footer/footer.html' %}
+</body>
+</html>

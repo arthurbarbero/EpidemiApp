@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Home/home.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Incidence/incidence.css') }}">
+    <script src="{{ url_for('static', filename='utils/form_utils.js') }}"></script>
+    <script src="{{ url_for('static', filename='Incidence/incidence.js') }}"></script>
+    <title>{{ title }}</title>
+</head>
+<body>
+    {% include 'Header/header.html' %}
+    <div class="home-background">
+        <h1 class="title">
+            Cadastrar Incidência Epidemiológica
+        </h1>
+        <div class="first-container">
+            <div class="card">
+                <div class="incidence-form">
+                    <div class='form-div-input'>
+                        <label for="doenca-name">Doênça:</label>
+                        <div class="forms">
+                            <select class="select-doenca" name="doencas" id="doencas">
+                                <option value="" disabled selected>Clique para selecionar a doênça</option>
+                                {% if data.diseases %}
+                                    {% for disease in data.diseases %}
+                                        <option value="{{ disease }}">{{ disease }}</option>
+                                    {% endfor %}
+                                {% endif %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="incidence-form">
+                    <div class='form-div-input'>
+                        <label for="incidence-date">Data de coleta:</label>
+                        <div class="forms">
+                            <input
+                                class="form-input"
+                                type="date"
+                                name="incidence-date"
+                                id="incidence-date"
+                                onblur="onFocusLoose(this)"
+                            >    
+                        </div>
+                    </div>
+                </div>
+                <div class="disease-form">
+                    <div class='form-div-input'>
+                        <div class="forms">
+                            <input
+                                class="form-btn"
+                                value="Cadastrar"
+                                type="button"
+                                name="logar"
+                                id="logar"
+                                onclick="sendIncidence()"
+                            >    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+    {% include 'Footer/footer.html' %}
+</body>
+</html>

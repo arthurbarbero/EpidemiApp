@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Home/home.css') }}">
+    <script src="{{ url_for('static', filename='Home/home.js') }}"></script>
+    <title>{{ title }}</title>
+</head>
+<body>
+    {% include 'Header/header.html' %}
+    <div class="home-background">
+        <div class="home-welcome">
+            <h1 class="home-title">
+                Bem vindo!
+            </h1>
+            <hr style="width: 70vw;">
+            <h2 class="home-subtitle">
+                EpidemiApp
+            </h2>
+            <div class="home-options">
+                <p class="home-text">
+                    Serviço de registro e captação de incidencias de doenças epidemiológicas
+                </p>
+                <p style="margin-top: 30px;">
+                    Faça o Login, ou se Cadastre-se
+                </p>
+                <div class="home-btns-options">
+                    <input class="home-btns" type="button" value="Login" onclick="window.location.href='/account/login'" /> 
+                    <input class="home-btns" type="button" value="Cadastre-se" onclick="window.location.href='/account/register'" /> 
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'Footer/footer.html' %}
+</body>
+</html>
