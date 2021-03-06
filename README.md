@@ -51,7 +51,7 @@ O usuário poderá cadastrar a doênça para que todos possam informar quando ho
 
 Utilizando das informações cadastradas de Doênça, o usuário informa quando houve mais uma incidência da doença selecionada.
 
-<img src="https://raw.githubusercontent.com/arthurbarbero/EpidemiApp/master/imagens/Cadastrar_doen%C3%A7a.jpg" width="800">
+<img src="https://raw.githubusercontent.com/arthurbarbero/EpidemiApp/master/imagens/Cadastrar_incid%C3%AAncia.jpg" width="800">
 
 ### Gráfico de incidência :bar_chart:
 
